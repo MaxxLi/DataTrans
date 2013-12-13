@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.aug.triton.db.remoteentity.SpectraConfig" table="spectra_config" schema="public">
+        <id name="id" type="short">
+            <column name="id" />
+        </id>
+        <property name="ch0IntegTime" type="java.lang.Integer">
+            <column name="ch0_integ_time" />
+        </property>
+        <property name="ch1IntegTime" type="java.lang.Integer">
+            <column name="ch1_integ_time" />
+        </property>
+    </class>
+</hibernate-mapping>

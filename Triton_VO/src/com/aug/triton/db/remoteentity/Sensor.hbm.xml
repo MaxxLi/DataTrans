@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3-Nov-2011 2:30:54 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.aug.triton.db.remoteentity.Sensor" table="sensor" schema="public">
+        <id name="id" type="short">
+            <column name="id" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="30" not-null="true" />
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="20" />
+        </property>
+        <property name="minValue" type="java.lang.Double">
+            <column name="min_value" />
+        </property>
+        <property name="maxValue" type="java.lang.Double">
+            <column name="max_value" />
+        </property>
+        <property name="tempAdjSlope" type="java.lang.Double">
+            <column name="temp_adj_slope" />
+        </property>
+        <property name="extremeLower" type="java.lang.Double">
+            <column name="extreme_lower" />
+        </property>
+        <property name="extremeUpper" type="java.lang.Double">
+            <column name="extreme_upper" />
+        </property>
+        <property name="needUpdate" type="boolean">
+            <column name="need_update" />
+        </property>
+        <set name="sensorReadings" inverse="true">
+            <key>
+                <column name="sensor_id" not-null="true" />
+            </key>
+            <one-to-many class="com.aug.triton.db.remoteentity.SensorReading" />
+        </set>
+    </class>
+</hibernate-mapping>

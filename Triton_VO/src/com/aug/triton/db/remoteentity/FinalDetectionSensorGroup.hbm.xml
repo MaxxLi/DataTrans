@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.aug.triton.db.remoteentity.FinalDetectionSensorGroup" table="final_detection_sensor_group" schema="public">
+        <id name="id" type="long">
+            <column name="id" />
+        </id>
+        <many-to-one name="sensorGroup" class="com.aug.triton.db.remoteentity.SensorReadingGroup" fetch="select">
+            <column name="sensor_group_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="finalDetection" class="com.aug.triton.db.remoteentity.FinalDetectionResult" fetch="select">
+            <column name="final_detection_id" not-null="true" />
+        </many-to-one>
+    </class>  
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.aug.triton.db.entity.LabMeasurement" table="lab_measurement" schema="public">
+        <id name="id" type="short">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="cont" class="com.aug.triton.db.entity.Cont" fetch="select">
+            <column name="cont_id" not-null="true" />
+        </many-to-one>
+        <property name="reading" type="java.lang.Double">
+            <column name="reading" precision="8" scale="8" />
+        </property>
+        <property name="sampleTime" type="timestamp">
+            <column name="sample_time" length="29" />
+        </property>
+        <property name="modified" type="timestamp">
+            <column name="modified" length="29" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

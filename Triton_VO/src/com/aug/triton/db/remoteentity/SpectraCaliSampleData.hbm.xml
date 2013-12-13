@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.aug.triton.db.remoteentity.SpectraCaliSampleData" table="spectra_cali_sample_data">
+        <id name="id" type="long">
+            <column name="id" />
+        </id>
+        <many-to-one name="spectraCaliGroupSample" class="com.aug.triton.db.remoteentity.SpectraCaliGroupSample" fetch="select">
+            <column name="sample_id" not-null="true" />
+        </many-to-one>
+        <property name="wavelength" type="java.lang.Double">
+            <column name="wavelength"/>
+        </property>
+        <property name="absorption" type="java.lang.Double">
+            <column name="absorption"/>
+        </property>       
+  </class>
+</hibernate-mapping>

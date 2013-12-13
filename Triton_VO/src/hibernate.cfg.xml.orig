@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/iwmserver</property>
+    <property name="hibernate.connection.username">iwm</property>
+    <property name="hibernate.connection.password">asdf</property>
+    <mapping resource="com/aug/triton/db/entity/SpectraReading.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SensorReading.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/FinalDetectionResult.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/Cont.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/Sensor.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/Location.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/TapRef.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/TapRefData.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/PotentialCont.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SpectraDetection.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/EventLog.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SpectraConfig.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SystemConfig.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/LabMeasurement.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SensorBaseline.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SensorBaselineSquare.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/StripChart.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SpectraCaliGroup.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SpectraCaliGroupSample.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SpectraCaliSampleData.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SpectraBaseline.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SpectraBaselineSquare.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SensorReadingGroup.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/FinalDetectionSensorGroup.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/FinalDetectionSpectraDetection.hbm.xml"/>
+    <!--    <mapping resource="com/aug/triton/db/entity/CentralDetectionResult.hbm.xml"/>-->
+    <mapping resource="com/aug/triton/db/entity/SensorCali.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/SensorError.hbm.xml"/>
+    <mapping resource="com/aug/triton/db/entity/TocReading.hbm.xml"/>
+  </session-factory>
+
+</hibernate-configuration>

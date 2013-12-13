@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.aug.triton.db.entity.SpectraCaliGroup" table="spectra_cali_group" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="cont" class="com.aug.triton.db.entity.Cont" lazy="false">
+            <column name="cont_id" not-null="true" />
+        </many-to-one>
+        <property name="sampleTime" type="timestamp">
+            <column name="sample_time" length="29" not-null="false" />
+        </property>
+        <many-to-one name="tapRef" class="com.aug.triton.db.entity.TapRef" fetch="select">
+            <column name="tap_ref_id" not-null="true" />
+        </many-to-one>
+        <property name="isSelected" type="java.lang.Boolean">
+            <column name="is_selected" />
+        </property>
+        <property name="peakWavelength" type="java.lang.Integer">
+            <column name="peak_wavelength" />
+        </property>
+        <property name="slope" type="java.lang.Double">
+            <column name="slope"/>
+        </property>
+        <property name="intercept" type="java.lang.Double">
+            <column name="intercept"/>
+        </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3-Nov-2011 2:30:54 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.aug.triton.db.entity.FinalDetectionResult" table="final_detection_result" schema="public">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="sequence">
+                <param name="sequence">final_detection_result_seq</param>
+            </generator>
+        </id>
+        <property name="sampleTime" type="timestamp">
+            <column name="sample_time" length="29" not-null="true" />
+        </property>
+        <property name="combinedAnomaly" type="java.lang.Boolean">
+            <column name="combined_anomaly" />
+        </property>
+        <property name="combinedConfidence" type="java.lang.Float">
+            <column name="combined_confidence" precision="8" scale="8" />
+        </property>
+<!--        <set name="sensorReadingGroups" table="final_detection_sensor_group" cascade="all" inverse="false">
+            <key>  
+                <column name="final_detection_id" not-null="true"/>
+            </key>
+            <many-to-many class="com.aug.triton.db.entity.SensorReadingGroup" >
+                <column name="sensor_group_id"  not-null="true"/>
+            </many-to-many>
+        </set>
+        <set name="spectraDetections" table="final_detection_spectra_detection" cascade="all" inverse="false">
+            <key>  
+                <column name="final_detection_id" not-null="true"/>
+            </key>
+            <many-to-many class="com.aug.triton.db.entity.SpectraDetection" >
+                <column name="spectra_detection_id"  not-null="true"/>
+            </many-to-many>
+        </set>-->
+        
+    </class>
+</hibernate-mapping>

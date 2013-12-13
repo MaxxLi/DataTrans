@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3-Nov-2011 2:30:54 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.aug.triton.db.entity.SpectraDetection" table="spectra_detection" schema="public">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="sequence">
+                <param name="sequence">spectra_detection_seq</param>
+            </generator>
+        </id>
+        <property name="sampleTime" type="timestamp">
+            <column name="sample_time" length="29" not-null="true" />
+        </property>
+        <property name="anomaly" type="java.lang.Boolean">
+            <column name="anomaly" />
+        </property>
+        <property name="confidence" type="java.lang.Float">
+            <column name="confidence" precision="8" scale="8" />
+        </property>
+        <many-to-one name="tapRef" class="com.aug.triton.db.entity.TapRef" fetch="select">
+            <column name="tap_ref_id" not-null="true" />
+        </many-to-one>
+        <set name="spectraReadings">
+            <key>
+                <column name="detection_id" />
+            </key>
+            <one-to-many class="com.aug.triton.db.entity.SpectraReading" />
+        </set>
+        <set name="potentialConts">
+            <key>
+                <column name="detection_id" />
+            </key>
+            <one-to-many class="com.aug.triton.db.entity.PotentialCont" />
+        </set>
+        <set name="finalDetectionResults">
+            <key>
+                <column name="detection_id" />
+            </key>
+            <one-to-many class="com.aug.triton.db.entity.FinalDetectionResult" />
+        </set>
+    </class>
+</hibernate-mapping>

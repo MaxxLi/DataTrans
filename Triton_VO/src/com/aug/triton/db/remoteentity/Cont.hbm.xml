@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3-Nov-2011 2:30:54 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.aug.triton.db.remoteentity.Cont" table="cont" schema="public">
+        <id name="id" type="short">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        
+        <property name="contName" type="string">
+            <column name="cont_name" not-null="true" />
+        </property>
+        
+        <property name="units" type="string">
+            <column name="units" length="16" />
+        </property>
+        
+        <set name="potentialConts" inverse="true">
+            <key>
+                <column name="cont_id" not-null="true" />
+            </key>
+            <one-to-many class="com.aug.triton.db.remoteentity.PotentialCont" />
+        </set>
+        
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="iwm" match-schema="public"/>
+  <table-filter match-name="cont"/>
+  <table-filter match-name="final_detection_result"/>
+  <table-filter match-name="tap_ref_data"/>
+  <table-filter match-name="sensor"/>
+  <table-filter match-name="tap_ref"/>
+  <table-filter match-name="spectra_reading"/>
+  <table-filter match-name="location"/>
+  <table-filter match-name="potential_cont"/>
+  <table-filter match-name="sensor_reading"/>
+  <table-filter match-name="spectra_detection"/>
+  <table-filter match-name="event_log"/>
+  <table-filter match-name="spectra_config"/>
+  <table-filter match-name="system_config"/>
+  <table-filter match-name="lab_measurement"/>
+  <table-filter match-name="sensor_baseline"/>
+  <table-filter match-name="sensor_baseline_square"/>
+  <table-filter match-name="strip_chart"/>
+  <table-filter match-name="spectra_cali_group"/>
+  <table-filter match-name="spectra_cali_group_sample"/>
+  <table-filter match-name="spectra_cali_sample_data"/>
+  <table-filter match-name="spectra_baseline"/>
+  <table-filter match-name="spectra_baseline_square"/>
+  <table-filter match-name="final_detection_sensor_group"/>
+  <table-filter match-name="final_detection_spectra_detection"/>
+  <table-filter match-name="toc_reading"/>
+</hibernate-reverse-engineering>

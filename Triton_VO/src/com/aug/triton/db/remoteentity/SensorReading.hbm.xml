@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3-Nov-2011 2:30:54 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.aug.triton.db.remoteentity.SensorReading" table="sensor_reading" schema="public">
+        <id name="id" type="long">
+            <column name="id" />
+        </id>
+        <many-to-one name="sensor" class="com.aug.triton.db.remoteentity.Sensor" fetch="select">
+            <column name="sensor_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="sensorReadingGroup" class="com.aug.triton.db.remoteentity.SensorReadingGroup" fetch="select">
+            <column name="group_id" not-null="true" />
+        </many-to-one>
+        <property name="isDetected" type="java.lang.Boolean">
+            <column name="is_detected" />
+        </property>
+        <property name="confidence" type="java.lang.Double">
+            <column name="confidence" />
+        </property>
+        <property name="isUploaded" type="java.lang.Boolean">
+            <column name="is_uploaded" />
+        </property>
+        <property name="reading" type="java.lang.Double">
+            <column name="reading" />
+        </property>
+    </class>
+</hibernate-mapping>

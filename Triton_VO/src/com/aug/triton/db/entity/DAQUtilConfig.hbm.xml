@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.aug.triton.db.entity.DAQUtilConfig" table="daq_util_config">
+    <id name="id" type="int">
+        <column name="id" />
+        <generator class="increment" />
+    </id>
+    <property name="device" type="string">
+        <column name="device" not-null="true" />
+    </property>
+    <property name="outputString" type="string">
+        <column name="output_string" not-null="true" />
+    </property>
+    <property name="numLines" type="int">
+        <column name="num_lines" />
+    </property>
+    <property name="utilName" type="string">
+        <column name="util_name" not-null="true" />
+    </property>
+    <set name="DAQUtilConfigLineNames" inverse="true">
+        <key>
+            <column name="daq_util_config_id" not-null="true"/>
+        </key>
+        <one-to-many class="com.aug.triton.db.entity.DAQUtilConfigLineName" />
+    </set>
+  </class>
+</hibernate-mapping>

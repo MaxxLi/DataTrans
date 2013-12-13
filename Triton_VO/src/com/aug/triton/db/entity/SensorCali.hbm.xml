@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.aug.triton.db.entity.SensorCali" table="sensor_cali">
+    <id name="id" type="short">
+        <column name="id" />
+        <generator class="increment" />
+    </id>
+    <property name="lastCalibrated" type="string">
+        <column name="lastcalibrated" />
+    </property>
+    <property name="offset" type="java.lang.Double">
+        <column name="offset_" />
+    </property>
+    <property name="readingAdjustment" type="java.lang.Double">
+        <column name="readingadjustment" />
+    </property>
+    <property name="maxCurrent" type="java.lang.Double">
+        <column name="maxcurrent" />
+    </property>
+    <property name="minCurrent" type="java.lang.Double">
+        <column name="mincurrent"/>
+    </property>
+    <property name="shuntResistance" type="java.lang.Double">
+        <column name="shuntresistance" />
+    </property>
+    <property name="deviceChannel" type="string">
+        <column name="devicechannel"/>
+    </property>
+    <property name="slope" type="java.lang.Double">
+        <column name="slope"/>
+    </property>
+    <many-to-one name="sensor" class="com.aug.triton.db.entity.Sensor" column="sensor_id" unique="true"/>
+  </class>
+</hibernate-mapping>

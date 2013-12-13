@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.aug.triton.db.entity.SpectraBaseline" schema="public" table="spectra_baseline">
+    <id name="id" type="int">
+      <column name="id"/>
+      <generator class="increment"/>
+    </id>
+    <property name="mean" type="java.lang.Double">
+      <column name="mean"/>
+    </property>
+    <property name="wavelength" type="java.lang.Double">
+      <column name="wavelength"/>
+    </property>
+    <property name="updated" type="timestamp">
+      <column length="29" name="updated" not-null="true"/>
+    </property>
+  </class>
+  
+</hibernate-mapping>

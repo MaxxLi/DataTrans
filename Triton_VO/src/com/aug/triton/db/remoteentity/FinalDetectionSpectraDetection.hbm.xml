@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.aug.triton.db.remoteentity.FinalDetectionSpectraDetection" table="final_detection_spectra_detection" schema="public">
+        <id name="id" type="long">
+            <column name="id" />
+        </id>
+        <many-to-one name="spectraDetection" class="com.aug.triton.db.remoteentity.SpectraDetection" fetch="select">
+            <column name="spectra_detection_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="finalDetection" class="com.aug.triton.db.remoteentity.FinalDetectionResult" fetch="select">
+            <column name="final_detection_id" not-null="true" />
+        </many-to-one>
+    </class>  
+</hibernate-mapping>

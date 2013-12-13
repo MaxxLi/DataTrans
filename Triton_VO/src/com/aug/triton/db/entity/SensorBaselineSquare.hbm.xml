@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.aug.triton.db.entity.SensorBaselineSquare" schema="public" table="sensor_baseline_square">
+    <id name="id" type="short">
+      <column name="id"/>
+      <generator class="increment"/>
+    </id>
+    <many-to-one class="com.aug.triton.db.entity.Sensor" fetch="select" name="rowSensor">
+      <column name="row_sensor_id" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="com.aug.triton.db.entity.Sensor" fetch="select" name="columnSensor">
+      <column name="column_sensor_id" not-null="true"/>
+    </many-to-one>
+    <property name="squareMean" type="java.lang.Double">
+      <column name="square_mean"/>
+    </property>
+    <property name="updated" type="timestamp">
+      <column length="29" name="updated" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

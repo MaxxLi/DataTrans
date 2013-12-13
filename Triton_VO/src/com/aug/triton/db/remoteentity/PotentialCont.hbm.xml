@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3-Nov-2011 2:30:54 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.aug.triton.db.remoteentity.PotentialCont" table="potential_cont" schema="public">
+        <id name="id" type="long">
+            <column name="id" />
+        </id>
+        <many-to-one name="cont" class="com.aug.triton.db.remoteentity.Cont" lazy="false">
+            <column name="cont_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="spectraDetection" class="com.aug.triton.db.remoteentity.SpectraDetection" fetch="select">
+            <column name="detection_id" not-null="true" />
+        </many-to-one>
+        <property name="confidence" type="java.lang.Float">
+            <column name="confidence" precision="8" scale="8" not-null="true" />
+        </property>
+        <property name="estimatedValue" type="java.lang.Float">
+            <column name="estimated_value" precision="8" scale="8" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.aug.triton.db.entity.SensorError" table="sensor_error">
+    <id name="id" type="short">
+        <column name="id" />
+        <generator class="sequence">
+            <param name="sequence">sensor_error_seq</param>
+        </generator>
+    </id>
+    <property name="message" type="string">
+        <column name="error_message" />
+    </property>
+    <property name="duration" type="java.lang.Integer">
+        <column name="duration" />
+    </property>
+    <property name="startTime" type="java.sql.Timestamp">
+        <column name="start_time" />
+    </property>
+    <many-to-one name="sensor" class="com.aug.triton.db.entity.Sensor" column="sensor_id" unique="true"/>
+  </class>
+</hibernate-mapping>

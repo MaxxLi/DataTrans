@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.aug.triton.db.remoteentity.SpectraBaselineSquare" schema="public" table="spectra_baseline_square">
+    <id name="id" type="int">
+      <column name="id"/>
+    </id>
+    <property name="rowWavelength" type="java.lang.Double">
+      <column name="row_wavelength"/>
+    </property>
+    <property name="columnWavelength" type="java.lang.Double">
+      <column name="column_wavelength"/>
+    </property>    
+    <property name="squareMean" type="java.lang.Double">
+      <column name="square_mean"/>
+    </property>
+    <property name="updated" type="timestamp">
+      <column length="29" name="updated" not-null="true"/>
+    </property>  
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3-Nov-2011 2:30:54 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.aug.triton.db.entity.SpectraReading" table="spectra_reading" schema="public">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="sequence">
+                <param name="sequence">spectra_reading_seq</param>
+            </generator>
+        </id>
+        <many-to-one name="spectraDetection" class="com.aug.triton.db.entity.SpectraDetection" fetch="select">
+            <column name="detection_id" />
+        </many-to-one>
+        <property name="wavelength" type="float">
+            <column name="wavelength" precision="8" scale="8" not-null="true" />
+        </property>
+        <property name="absorption" type="float">
+            <column name="absorption" precision="8" scale="8" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
